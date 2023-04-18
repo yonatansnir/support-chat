@@ -1,7 +1,10 @@
-import React, { FormEvent } from "react";
-import * as Style from "./Chat.module.scss";
-import { TextField } from "components/inputs/TextField";
-import { Message } from "components/Message/Message";
+import React from "react";
+import * as Style from "./Message.module.scss";
+
+interface MessageProps {
+  message: string;
+  isHuman: boolean;
+}
 
 const response =
   " To solve this problem, login into the device CLI (“root” user account) and then follow the steps below: \n" +
@@ -14,23 +17,11 @@ const response =
   "</ul>\n" +
   "The output of the above command should be: Query OK, 1 row affected (0.001 sec).";
 
-export const Chat = () => {
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    console.log(e.currentTarget);
-  };
-
+export const Message = ({ message, isHuman }: MessageProps) => {
+  if (!isHuman) return <div dangerouslySetInnerHTML={{ __html: response }} />;
   return (
-    <div className={Style.chat}>
-      <div>
-        <Message isHuman={true} message="hello" />
-        <Message isHuman={false} message="hello" />
-        <Message isHuman={true} message="hello" />
-        <Message isHuman={false} message="hello" />
-      </div>
-      <form onSubmit={handleSubmit}>
-        <TextField />
-        <button className={Style.sendBtn}>Send</button>
-      </form>
+    <div className={`${Style.container} ${isHuman && Style.human}`}>
+      {message}
     </div>
   );
 };

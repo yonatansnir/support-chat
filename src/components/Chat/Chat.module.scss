@@ -1,12 +1,25 @@
 .chat {
     display: flex;
+    height: 100%;
     flex-direction: column;
-    div:nth-child(1) {
+    > div:nth-child(1) {
         flex-grow: 1;
-        background: yellow;
+        background: #4a516b;
     }
-    div:nth-child(2){
-        height: 50px;
-        background: red;
+    > form {
+        padding: 10px;
+        height: 80px;
+        display: flex;
+        align-items: center;
     }
+}
+
+.sendBtn {
+    margin-left: 10px;
+    width: 100px;
+    border-radius: 2px;
+    height: 40px;
+    border: none;
+    background: #6786ff;
+    color: white;
 }
