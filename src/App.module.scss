@@ -1,5 +1,22 @@
-
-.appWrap{
-    color:red;
+.App {
+    height: 100%;
+    display: flex;
+    border-radius: 7px;
+    overflow: hidden;
+    color: rgb(240, 240, 240);
+    
+    > div {
+        padding: 10px;
+    }
+}
+// menu container
+.menuContainer {
+    background: #282c41;
+    flex-grow: 1;
 }
 
+// chat container
+.chatContainer {
+    background: #333a5e;
+    flex-grow: 3;
+}

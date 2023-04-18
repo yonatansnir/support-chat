@@ -1,0 +1,12 @@
+.chat {
+    display: flex;
+    flex-direction: column;
+    div:nth-child(1) {
+        flex-grow: 1;
+        background: yellow;
+    }
+    div:nth-child(2){
+        height: 50px;
+        background: red;
+    }
+}

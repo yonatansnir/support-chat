@@ -10,3 +10,6 @@ body {
     background-color: #1c1f2c;
     padding: 24px;
 }
+#root {
+    height: 100%;
+}
